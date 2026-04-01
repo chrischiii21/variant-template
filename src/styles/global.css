@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+:root {
+  /* Color Palette */
+  --color-text: #0b1119;
+  --color-background: #f8fafc;
+  --color-primary: #304678;
+  --color-secondary: #48566a;
+  --color-accent: #f59f0a;
+}
+
+/* Custom Typography */
+.text-sm { font-size: 0.707rem; }
+.text-base { font-size: 1rem; }
+.text-xl { font-size: 1.414rem; }
+.text-2xl { font-size: 1.999rem; }
+.text-3xl { font-size: 2.827rem; }
+.text-4xl { font-size: 3.997rem; }
+.text-5xl { font-size: 5.652rem; }
+
+.font-heading { font-family: 'Poppins', sans-serif; }
+.font-body { font-family: 'Poppins', sans-serif; }
+
+.font-normal { font-weight: 400; }
+.font-bold { font-weight: 700; }
