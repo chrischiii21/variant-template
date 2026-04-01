@@ -1,9 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-
+import Hero from "../components/layout/Hero.astro";
 ---
 
-<BaseLayout>
-	
+<BaseLayout
+	title="Home | Your Company"
+	description="Professional services for all your construction and trade needs"
+>
+	<Hero
+		title="We Will Be Happy To Take Care Of Your Work"
+		badge="Since 1982"
+		ctaText="Contact Us"
+		ctaLink="/contact"
+		secondaryCtaText="Request a Quote"
+		secondaryCtaLink="/contact"
+	/>
 </BaseLayout>
