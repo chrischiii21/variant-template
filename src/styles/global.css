@@ -23,3 +23,26 @@
 
 .font-normal { font-weight: 400; }
 .font-bold { font-weight: 700; }
+
+/* Navbar Styling */
+.ftco-navbar-light .navbar-brand:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -20px;
+  width: 100px;
+  background: #ffa62b;
+  transform: skewX(-20deg);
+  z-index: -1;
+  content: '';
+}
+
+.aside-stretch:after {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  content: '';
+  width: 360%;
+  background: #ffa62b;
+}
