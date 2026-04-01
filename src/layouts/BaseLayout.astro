@@ -1,15 +1,18 @@
 ---
-import Navbar from "../components/layout/Navbar.astro";
 import Footer from "../components/layout/Footer.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import "../styles/global.css";
 
 interface Props {
     title?: string;
     description?: string;
+    image?: string;
 }
 
 const {
-    title = "Your Company",
-    description = "Professional services for all your needs",
+    title = "Webdev Variant - Professional Engineering & Construction Solutions",
+    description = "Expert HVAC and Plumbing services for residential and commercial properties",
+    image = "/favicon.svg",
 } = Astro.props;
 ---
 
@@ -36,3 +39,7 @@ const {
         <Footer />
     </body>
 </html>
+
+<style is:global>
+    @import "../styles/global.css";
+</style>
