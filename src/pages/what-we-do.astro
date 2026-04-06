@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero2 from "../components/layout/Hero2.astro";
 import TrustBar from "../components/layout/TrustBar.astro";
+import Services from "../components/layout/Services.astro";
+import CTA from "../components/layout/CTA.astro";
 ---
 
 <BaseLayout
@@ -14,42 +16,6 @@ import TrustBar from "../components/layout/TrustBar.astro";
         breadcrumbs={[{ label: "HOME", href: "/" }, { label: "WHAT WE DO" }]}
     />
     <TrustBar />
-
-    <section class="py-16 px-6 max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 shadow-lg">
-                <h3
-                    class="font-heading font-bold text-2xl mb-4 text-[var(--color-primary)]"
-                >
-                    Professional Services
-                </h3>
-                <p class="text-gray-600">
-                    We provide expert services across multiple trades and
-                    industries with years of experience.
-                </p>
-            </div>
-            <div class="bg-white p-8 shadow-lg">
-                <h3
-                    class="font-heading font-bold text-2xl mb-4 text-[var(--color-primary)]"
-                >
-                    Quality Assurance
-                </h3>
-                <p class="text-gray-600">
-                    Every project is completed to the highest standards with
-                    attention to detail and craftsmanship.
-                </p>
-            </div>
-            <div class="bg-white p-8 shadow-lg">
-                <h3
-                    class="font-heading font-bold text-2xl mb-4 text-[var(--color-primary)]"
-                >
-                    Customer Focused
-                </h3>
-                <p class="text-gray-600">
-                    Your satisfaction is our priority. We work closely with you
-                    to exceed expectations.
-                </p>
-            </div>
-        </div>
-    </section>
+    <Services />
+    <CTA>
 </BaseLayout>
