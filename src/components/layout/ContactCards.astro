@@ -1,0 +1,28 @@
+---
+import ContactCard from "../ui/ContactCard.astro";
+import { getCollection } from "astro:content";
+
+// Get contact info from collection
+const contactInfo = await getCollection("contact");
+const sortedContacts = contactInfo.sort((a, b) => a.data.order - b.data.order);
+---
+
+<section class="py-16 px-6 bg-background">
+    <div class="max-w-7xl mx-auto">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+        >
+            {
+                sortedContacts.map((contact) => (
+                    <ContactCard
+                        icon={contact.data.icon}
+                        title={contact.data.title}
+                        subtitle={contact.data.subtitle}
+                        link={contact.data.link}
+                        linkText={contact.data.linkText}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>
