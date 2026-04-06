@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero2 from "../components/layout/Hero2.astro";
-import About from "../components/layout/About.astro";
+import AboutSection from "../components/layout/About.astro";
 ---
 
 <BaseLayout
@@ -13,10 +13,10 @@ import About from "../components/layout/About.astro";
         breadcrumbs={[{ label: "HOME", href: "/" }, { label: "ABOUT US" }]}
     />
 
-    <About />
+    <AboutSection />
 
     <section class="py-16 px-6 bg-background">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
                 <h2 class="heading-h2 font-heading font-bold text-primary mb-4">
                     Our Mission
@@ -28,7 +28,7 @@ import About from "../components/layout/About.astro";
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 shadow-lg">
+                <div class="bg-white p-10 shadow-lg">
                     <div class="flex items-center gap-4 mb-6">
                         <div
                             class="w-12 h-12 bg-accent flex items-center justify-center shrink-0"
@@ -38,18 +38,18 @@ import About from "../components/layout/About.astro";
                                 >1</span
                             >
                         </div>
-                        <h3 class="text-xl font-heading font-bold text-primary">
-                            Empower Contractors
+                        <h3 class="text-2xl font-heading font-bold text-primary">
+                            Enable Growth
                         </h3>
                     </div>
-                    <p class="font-body text-gray-600">
+                    <p class="font-body text-gray-600 text-[18px]">
                         We provide contractors with professional digital tools
                         that help them grow their businesses and reach more
                         customers effectively.
                     </p>
                 </div>
 
-                <div class="bg-white p-8 shadow-lg">
+                <div class="bg-white p-10 shadow-lg">
                     <div class="flex items-center gap-4 mb-6">
                         <div
                             class="w-12 h-12 bg-accent flex items-center justify-center shrink-0"
@@ -59,18 +59,18 @@ import About from "../components/layout/About.astro";
                                 >2</span
                             >
                         </div>
-                        <h3 class="text-xl font-heading font-bold text-primary">
+                        <h3 class="text-2xl font-heading font-bold text-primary">
                             Drive Results
                         </h3>
                     </div>
-                    <p class="font-body text-gray-600">
+                    <p class="font-body text-gray-600 text-[18px]">
                         Every template we create is designed with conversion in
                         mind, helping our clients generate more leads and close
                         more deals.
                     </p>
                 </div>
 
-                <div class="bg-white p-8 shadow-lg">
+                <div class="bg-white p-10 shadow-lg">
                     <div class="flex items-center gap-4 mb-6">
                         <div
                             class="w-12 h-12 bg-accent flex items-center justify-center shrink-0"
@@ -80,13 +80,13 @@ import About from "../components/layout/About.astro";
                                 >3</span
                             >
                         </div>
-                        <h3 class="text-xl font-heading font-bold text-primary">
+                        <h3 class="text-2xl font-heading font-bold text-primary">
                             Build Trust
                         </h3>
                     </div>
-                    <p class="font-body text-gray-600">
+                    <p class="font-body text-gray-600 text-[18px]">
                         We create lasting partnerships by delivering quality
-                        work, transparent pricing, and exceptional support to
+                        work, transparent pricing, and exceptional ongoing support to
                         every client we serve.
                     </p>
                 </div>
