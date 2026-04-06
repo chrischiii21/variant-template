@@ -1,0 +1,31 @@
+---
+import SocialIcon from "../ui/SocialIcon.astro";
+import { getCollection } from "astro:content";
+
+interface Props {
+    title?: string;
+}
+
+const { title = "Follow Us" } = Astro.props;
+
+// Get social links from collection
+const socialLinks = await getCollection("social");
+const sortedSocials = socialLinks.sort((a, b) => a.data.order - b.data.order);
+---
+
+<div class="bg-white p-8 shadow-lg">
+    <h3 class="font-heading font-bold text-xl md:text-2xl text-primary mb-6">
+        {title}
+    </h3>
+    <div class="flex gap-4">
+        {
+            sortedSocials.map((social) => (
+                <SocialIcon
+                    href={social.data.url}
+                    label={social.data.name}
+                    icon={social.data.icon}
+                />
+            ))
+        }
+    </div>
+</div>

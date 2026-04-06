@@ -28,7 +28,47 @@ const templatesCollection = defineCollection({
     }),
 });
 
+const contactCollection = defineCollection({
+    loader: glob({
+        pattern: '**/*.md',
+        base: './src/content/contact',
+    }),
+    schema: z.object({
+        type: z.enum(['phone', 'email', 'location', 'chat']),
+        title: z.string(),
+        subtitle: z.string(),
+        link: z.string(),
+        linkText: z.string(),
+        icon: z.string(),
+        order: z.number(),
+    }),
+});
+
+const socialCollection = defineCollection({
+    loader: glob({
+        pattern: '**/*.md',
+        base: './src/content/social',
+    }),
+    schema: z.object({
+        name: z.string(),
+        url: z.string(),
+        icon: z.string(),
+        order: z.number(),
+    }),
+});
+
+const pagesCollection = defineCollection({
+    loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+    }),
+});
+
 export const collections = {
     'trades': tradesCollection,
     'templates': templatesCollection,
+    'contact': contactCollection,
+    'social': socialCollection,
+    'pages': pagesCollection,
 };
