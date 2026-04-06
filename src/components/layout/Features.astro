@@ -44,11 +44,11 @@ const getIcon = (iconName: string) => {
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
             <h2
-                class="text-4xl md:text-5xl font-heading font-bold text-[var(--color-primary)] mb-4"
+                class="text-4xl md:text-5xl font-heading font-bold text-primary mb-4"
             >
                 {title}
             </h2>
-            <p class="text-xl text-gray-600">
+            <p class="text-xl font-body text-gray-600">
                 {subtitle}
             </p>
         </div>
@@ -57,7 +57,7 @@ const getIcon = (iconName: string) => {
             {
                 features.map((feature) => (
                     <div class="text-center p-8">
-                        <div class="w-16 h-16 bg-[var(--color-accent)] mx-auto mb-6 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-accent mx-auto mb-6 flex items-center justify-center">
                             <svg
                                 class="w-8 h-8 text-white"
                                 fill="none"
@@ -72,10 +72,10 @@ const getIcon = (iconName: string) => {
                                 />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-heading font-bold text-[var(--color-primary)] mb-4">
+                        <h3 class="text-xl font-heading font-bold text-primary mb-4">
                             {feature.title}
                         </h3>
-                        <p class="text-gray-600">{feature.description}</p>
+                        <p class="font-body text-gray-600">{feature.description}</p>
                     </div>
                 ))
             }
