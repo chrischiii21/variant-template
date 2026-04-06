@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero2 from "../components/layout/Hero2.astro";
+import TrustBar from "../components/layout/TrustBar.astro";
 ---
 
 <BaseLayout
@@ -12,6 +13,7 @@ import Hero2 from "../components/layout/Hero2.astro";
         backgroundImage="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&h=1080&fit=crop&q=80"
         breadcrumbs={[{ label: "HOME", href: "/" }, { label: "WHAT WE DO" }]}
     />
+    <TrustBar />
 
     <section class="py-16 px-6 max-w-6xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
