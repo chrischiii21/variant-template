@@ -1,0 +1,94 @@
+---
+interface Value {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const values: Value[] = [
+  {
+    icon: "chart",
+    title: "Results-Driven",
+    description: "We focus on measurable outcomes that directly impact your bottom line and business growth."
+  },
+  {
+    icon: "users",
+    title: "Client-Focused",
+    description: "Your success is our priority. We build lasting partnerships through exceptional service and support."
+  },
+  {
+    icon: "shield",
+    title: "Quality First",
+    description: "We never compromise on quality. Every project meets our high standards for excellence and performance."
+  },
+  {
+    icon: "lightning",
+    title: "Innovation",
+    description: "We stay ahead of industry trends to deliver cutting-edge solutions that give you a competitive advantage."
+  }
+];
+
+function getIcon(iconName: string) {
+  const icons: Record<string, string> = {
+    chart: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+    users: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
+    shield: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    lightning: "M13 10V3L4 14h7v7l9-11h-7z"
+  };
+  return icons[iconName] || icons.chart;
+}
+---
+
+<section class="pt-28 pb-20 px-6 bg-[var(--color-primary)] overflow-x-hidden"> 
+    <div class="max-w-7xl mx-auto overflow-x-hidden">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <p id="values-badge" class="font-bold uppercase text-[var(--color-accent)] mb-4 tracking-wider">
+                Our Values
+            </p>
+            <h2 id="values-title" class="heading-h2 font-bold text-white font-heading mb-6">
+                Why <span class="text-[var(--color-accent)]">Choose Us</span>
+            </h2>
+            <p id="values-subtitle" class="text-gray-200 text-center font-body text-xl max-w-3xl mx-auto leading-relaxed">
+                We're committed to delivering exceptional results through our core values and unwavering dedication to your success.
+            </p>
+        </div>
+
+        <!-- Values Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-2">
+            {values.map((value, index) => (
+                <div 
+                    id={`value-card-${index}`}
+                    class="bg-white rounded-xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+                >
+                    <!-- Icon -->
+                    <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
+                        <svg 
+                            class="w-8 h-8 text-accent group-hover:text-white transition-colors duration-300" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                        >
+                            <path 
+                                stroke-linecap="round" 
+                                stroke-linejoin="round" 
+                                stroke-width="2" 
+                                d={getIcon(value.icon)}
+                            />
+                        </svg>
+                    </div>
+
+                    <!-- Title -->
+                    <h4 class="text-2xl font-heading font-bold text-primary mb-4 group-hover:text-accent transition-colors duration-300">
+                        {value.title}
+                    </h4>
+
+                    <!-- Description -->
+                    <p class="text-base text-gray-600 leading-relaxed font-body">
+                        {value.description}
+                    </p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
