@@ -280,6 +280,11 @@
 html,
 body {
   overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  position: relative;
 }
 
 /* Animation performance optimizations */
@@ -293,5 +298,10 @@ body {
 .max-w-7xl,
 .max-w-6xl,
 .max-w-4xl {
+  overflow-x: hidden;
+}
+
+/* Prevent button scale from causing overflow */
+section {
   overflow-x: hidden;
 }

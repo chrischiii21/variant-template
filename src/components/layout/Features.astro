@@ -25,7 +25,7 @@ const {
             icon: "shield",
             title: "Trust & Credibility",
             description:
-                "Built-in review sections, certifications, and trust badges to win more jobs.",
+                "Built-in review sections, certifications, and trust badges to help win more jobs.",
         },
     ],
 } = Astro.props;
@@ -54,7 +54,7 @@ const getIcon = (iconName: string) => {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {
                 features.map((feature) => (
-                    <div class="text-center p-8">
+                    <div class="text-center p-8 bg-gray-50 border border-gray-200 transition-all duration-300 hover:-translate-y-1">
                         <div class="w-16 h-16 bg-accent mx-auto mb-6 flex items-center justify-center">
                             <svg
                                 class="w-8 h-8 text-white"
