@@ -14,9 +14,9 @@ const {
 ---
 
 <section class="py-8 bg-primary">
-    <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-6">
         <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-20 text-center text-white"
+            class="grid grid-cols-2 md:grid-cols-4 gap-30 text-center text-white"
         >
             {
                 stats.map((stat) => {
@@ -28,10 +28,10 @@ const {
                     
                     return (
                         <div>
-                            <p class="text-5xl font-heading font-bold text-accent">
+                            <p class="text-5xl font-heading font-bold text-accent mb-4">
                                 {prefix}<span class="counter" data-target={number}>0</span>{suffix}
                             </p>
-                            <p class="text-[18px] font-body font-semibold uppercase tracking-wide">
+                            <p class="text-[18px] font-body font-semibold tracking-wide">
                                 {stat.label}
                             </p>
                         </div>

@@ -11,21 +11,54 @@ interface Props {
 const { stats } = Astro.props;
 ---
 
-<section class="py-12 px-6 bg-primary border-b">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+<section class="py-8 bg-primary">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-20 text-center text-white">
             {
-                stats.map((stat) => (
-                    <div>
-                        <div class="text-4xl font-heading font-bold text-accent mb-2">
-                            {stat.value}
+                stats.map((stat) => {
+                    // Extract first number and everything after it
+                    const match = stat.value.match(/^(\D*)(\d+)(.*)$/);
+                    const prefix = match ? match[1] : '';
+                    const number = match ? match[2] : '0';
+                    const suffix = match ? match[3] : '';
+                    
+                    return (
+                        <div>
+                            <p class="text-5xl font-heading font-bold text-accent mb-4">
+                                {prefix}<span class="counter" data-target={number}>0</span>{suffix}
+                            </p>
+                            <p class="text-[18px] font-body font-semibold tracking-wide">
+                                {stat.label}
+                            </p>
                         </div>
-                        <div class="text-base text-white font-heading font-bold uppercase">
-                            {stat.label}
-                        </div>
-                    </div>
-                ))
+                    );
+                })
             }
         </div>
     </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target') || '0');
+      const duration = 1000;
+      const increment = target / (duration / 16);
+      let current = 0;
+      
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          counter.textContent = Math.floor(current).toString();
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = target.toString();
+        }
+      };
+      
+      updateCounter();
+    });
+  });
+</script>
