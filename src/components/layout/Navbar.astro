@@ -20,7 +20,10 @@ function getTradeIcon(tradeName: string) {
 }
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 h-29 transition-transform duration-300 ease-in-out" id="navbar">
+<nav
+  class="fixed top-0 left-0 right-0 z-50 h-29 transition-transform duration-300 ease-in-out"
+  id="navbar"
+>
   <!-- Mobile Orange angled section -->
   <div class="absolute inset-0 bg-primary lg:hidden">
     <div
@@ -38,7 +41,9 @@ function getTradeIcon(tradeName: string) {
   </div>
 
   <!-- Desktop Content -->
-  <div class="desktop-content relative z-10 flex h-full w-full px-8 hidden lg:flex">
+  <div
+    class="desktop-content relative z-10 flex h-full w-full px-8 hidden lg:flex"
+  >
     <!-- White background for logo area - extends to left edge but follows logo -->
     <div
       class="absolute inset-y-0 right-0 bg-white z-20"
@@ -51,10 +56,11 @@ function getTradeIcon(tradeName: string) {
       <a
         href="/"
         class="flex items-center text-primary transition-opacity duration-300"
+        aria-label="BUILDPRO Home"
       >
         <img
           src="/images/logo.avif"
-          alt="BUILDPRO"
+          alt="BUILDPRO Logo"
           class="w-10 h-10 object-contain mr-2"
         />
         <span
@@ -67,7 +73,9 @@ function getTradeIcon(tradeName: string) {
     <!-- Right content section - starts after white background with proper spacing - DESKTOP ONLY -->
     <div class="flex flex-col h-full flex-1 ml-18">
       <!-- Top row with contact info and quote button -->
-      <div class="contact-row flex items-center h-10 flex-1 relative justify-between">
+      <div
+        class="contact-row flex items-center h-10 flex-1 relative justify-between"
+      >
         <!-- Black background extending from logo area to right edge -->
         <div
           class="absolute inset-y-0 bg-black hidden lg:block"
@@ -78,7 +86,10 @@ function getTradeIcon(tradeName: string) {
         <div
           class="flex items-center gap-16 h-full text-base justify-start relative z-10 ml-10"
         >
-          <a href="mailto:info@buildpro.com" class="flex items-center gap-2 hover:text-accent transition-colors">
+          <a
+            href="mailto:info@buildpro.com"
+            class="flex items-center gap-2 hover:text-accent transition-colors"
+          >
             <svg
               class="w-5 h-5 text-accent"
               fill="currentColor"
@@ -92,7 +103,12 @@ function getTradeIcon(tradeName: string) {
             </svg>
             <p class="text-white text-base font-body">info@buildpro.com</p>
           </a>
-          <a href="https://maps.google.com/?q=123+Brooklyn+New+Street,+USA" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-accent transition-colors">
+          <a
+            href="https://maps.google.com/?q=123+Brooklyn+New+Street,+USA"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 hover:text-accent transition-colors"
+          >
             <svg
               class="w-5 h-5 text-accent"
               fill="currentColor"
@@ -103,9 +119,14 @@ function getTradeIcon(tradeName: string) {
                 d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
                 clip-rule="evenodd"></path>
             </svg>
-            <p class="text-white text-base font-body">123 Brooklyn New Street, USA</p>
+            <p class="text-white text-base font-body">
+              123 Brooklyn New Street, USA
+            </p>
           </a>
-          <a href="tel:+15551234567" class="flex items-center gap-2 hover:text-accent transition-colors">
+          <a
+            href="tel:+15551234567"
+            class="flex items-center gap-2 hover:text-accent transition-colors"
+          >
             <svg
               class="w-5 h-5 text-accent"
               fill="currentColor"
@@ -153,7 +174,7 @@ function getTradeIcon(tradeName: string) {
       >
         <!-- Gray background extending from logo area to right edge -->
         <div
-          class="absolute inset-y-0 bg-[var(--color-primary)] hidden lg:block"
+          class="absolute inset-y-0 bg-(--color-primary) hidden lg:block"
           style="left: calc(-100% - 2rem); right: calc(-100vw + 100%); width: calc(200vw + 100% + 2rem);"
         >
         </div>
@@ -181,7 +202,11 @@ function getTradeIcon(tradeName: string) {
                 class="text-m font-body font-semibold hover:text-orange-400 transition-colors uppercase tracking-wide flex items-center"
               >
                 TRADES WE SERVE
-                <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  class="ml-1 w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     fill-rule="evenodd"
                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -247,6 +272,7 @@ function getTradeIcon(tradeName: string) {
         href="/contact"
         class="compact-quote-btn hidden absolute inset-y-0 right-0 bg-accent hover:bg-[#d97706] h-full items-center transition-colors duration-300 cursor-pointer z-50"
         style="width: calc(50vw - 50% + 20rem); right: calc(-50vw + 50%); clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 3% 100%);"
+        aria-label="Get a free quote"
       >
         <div class="flex items-center h-full relative z-10 pointer-events-none">
           <p
@@ -265,11 +291,15 @@ function getTradeIcon(tradeName: string) {
   >
     <!-- Mobile Logo -->
     <div class="flex items-center min-w-0 flex-1 mr-2">
-      <a href="/" class="flex items-center text-black min-w-0">
+      <a
+        href="/"
+        class="flex items-center text-black min-w-0"
+        aria-label="BUILDPRO Home"
+      >
         <img
           src="/images/logo.avif"
-          alt="BUILDPRO"
-          class="w-6 h-6 sm:w-8 sm:h-8 object-contain mr-2 sm:mr-3 flex-shrink-0"
+          alt="BUILDPRO Logo"
+          class="w-6 h-6 sm:w-8 sm:h-8 object-contain mr-2 sm:mr-3 shrink-0"
         />
         <span
           class="text-lg sm:text-xl font-heading font-bold tracking-wider text-primary uppercase truncate"
@@ -282,7 +312,9 @@ function getTradeIcon(tradeName: string) {
     <button
       type="button"
       id="mobile-menu-button"
-      class="text-white hover:text-accent focus:outline-none flex-shrink-0 p-1"
+      class="text-white hover:text-accent focus:outline-none shrink-0 p-1"
+      aria-label="Toggle mobile menu"
+      aria-expanded="false"
     >
       <svg
         id="hamburger-icon"
@@ -290,6 +322,7 @@ function getTradeIcon(tradeName: string) {
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
+        aria-hidden="true"
       >
         <path
           stroke-linecap="round"
@@ -303,6 +336,7 @@ function getTradeIcon(tradeName: string) {
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
+        aria-hidden="true"
       >
         <path
           stroke-linecap="round"
@@ -337,6 +371,8 @@ function getTradeIcon(tradeName: string) {
         <button
           id="mobile-trades-button"
           class="flex items-center justify-between w-full text-secondary hover:text-accent font-medium py-2 transition-colors"
+          aria-label="Toggle trades menu"
+          aria-expanded="false"
         >
           Trades We Serve
           <svg
@@ -344,6 +380,7 @@ function getTradeIcon(tradeName: string) {
             class="ml-1 h-4 w-4 transition-transform duration-200"
             fill="currentColor"
             viewBox="0 0 20 20"
+            aria-hidden="true"
           >
             <path
               fill-rule="evenodd"
@@ -371,7 +408,9 @@ function getTradeIcon(tradeName: string) {
                   />
                 </svg>
                 <div>
-                  <div class="font-body font-medium text-sm">{trade.data.name}</div>
+                  <div class="font-body font-medium text-sm">
+                    {trade.data.name}
+                  </div>
                 </div>
               </a>
             ))
@@ -408,32 +447,34 @@ function getTradeIcon(tradeName: string) {
   .navbar-compact .contact-row {
     display: none;
   }
-  
+
   .contact-row {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition:
+      opacity 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
   }
-  
+
   .navbar-compact {
     height: 3rem;
     transition: height 0.4s ease-in-out;
   }
-  
+
   .navbar-compact .desktop-content {
     flex-direction: row;
     align-items: center;
     height: 3rem;
     transition: all 0.4s ease-in-out;
   }
-  
+
   .navbar-compact .logo-section {
     height: 3rem;
     width: auto;
     min-width: 200px;
     transition: all 0.3s ease-in-out;
   }
-  
+
   .navbar-compact .nav-section {
     height: 3rem;
     margin-left: 0;
@@ -442,67 +483,70 @@ function getTradeIcon(tradeName: string) {
     display: flex !important;
     transition: all 0.3s ease-in-out;
   }
-  
+
   .navbar-compact .nav-section .nav-links {
     margin-left: 2rem;
     transition: margin-left 0.3s ease-in-out;
   }
-  
+
   .navbar-compact .compact-quote-btn {
     display: flex !important;
+    align-items: center;
   }
-  
+
   .navbar-compact .right-content {
     display: none;
   }
-  
+
   .navbar-compact .contact-row {
     display: none;
   }
-  
+
   .right-content {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition:
+      opacity 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
   }
-  
+
   /* Hide background elements in compact mode */
   .navbar-compact .desktop-bg,
   .navbar-compact .contact-bg,
   .navbar-compact .nav-bg {
     display: none;
   }
-  
+
   /* Hide original quote buttons in compact mode */
   .navbar-compact .contact-row a[href="/contact"] {
     display: none !important;
   }
-  
+
   .desktop-bg,
   .contact-bg,
   .nav-bg {
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
   }
-  
+
   /* Smooth transitions for all navbar elements */
   .desktop-content,
   .logo-section,
   .nav-section {
     transition: all 0.3s ease-in-out;
   }
-  
+
   /* Enhanced navbar transform animation - simplified for sticky behavior */
   #navbar {
     transition: height 0.4s ease-in-out;
   }
-  
+
   /* Mobile compact state - same as normal for mobile */
   @media (max-width: 1023px) {
     .navbar-compact {
       height: 7.25rem; /* h-29 equivalent */
     }
-    
+
     .navbar-compact .mobile-content {
       height: 7.25rem;
     }
@@ -530,9 +574,9 @@ function getTradeIcon(tradeName: string) {
 
     function updateNavbar() {
       if (!navbar) return; // Guard clause for null navbar
-      
+
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY < 10) {
         // At top - show full navbar
         navbar.classList.remove("navbar-compact");
@@ -541,7 +585,7 @@ function getTradeIcon(tradeName: string) {
         // Scrolled down - show compact navbar (always sticky)
         navbar.classList.add("navbar-compact");
         navbar.style.transform = "translateY(0)";
-        
+
         // Close mobile menu if open when switching to compact
         if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
           mobileMenu.classList.add("hidden");
@@ -555,7 +599,7 @@ function getTradeIcon(tradeName: string) {
           }
         }
       }
-      
+
       ticking = false;
     }
 
@@ -569,7 +613,7 @@ function getTradeIcon(tradeName: string) {
     // Only add scroll listener if navbar exists
     if (navbar) {
       window.addEventListener("scroll", requestTick, { passive: true });
-      
+
       // Initial call to set correct state
       updateNavbar();
     }
@@ -584,11 +628,13 @@ function getTradeIcon(tradeName: string) {
           mobileMenu.classList.remove("hidden");
           hamburgerIcon.classList.add("hidden");
           closeIcon.classList.remove("hidden");
+          mobileMenuButton.setAttribute("aria-expanded", "true");
         } else {
           // Hide menu
           mobileMenu.classList.add("hidden");
           hamburgerIcon.classList.remove("hidden");
           closeIcon.classList.add("hidden");
+          mobileMenuButton.setAttribute("aria-expanded", "false");
 
           // Also close trades dropdown when closing main menu
           if (mobileTradesDropdown && mobileTradesArrow) {
@@ -608,10 +654,12 @@ function getTradeIcon(tradeName: string) {
           // Show dropdown
           mobileTradesDropdown.classList.remove("hidden");
           mobileTradesArrow.classList.add("rotate-180");
+          mobileTradesButton.setAttribute("aria-expanded", "true");
         } else {
           // Hide dropdown
           mobileTradesDropdown.classList.add("hidden");
           mobileTradesArrow.classList.remove("rotate-180");
+          mobileTradesButton.setAttribute("aria-expanded", "false");
         }
       });
     }
