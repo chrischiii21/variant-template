@@ -1,58 +1,153 @@
 ---
-// Story component - displays company story/about information
 interface Props {
-    title?: string;
-    paragraphs?: string[];
+    heading?: string;
+    subheading?: string;
+    story?: string[];
     image?: string;
     imageAlt?: string;
-    reverse?: boolean;
 }
 
 const {
-    title = "Our Story",
-    paragraphs = [
-        "Founded in 1982, we've been serving our community with professional and reliable services for over four decades.",
-        "Our team of experienced professionals is dedicated to delivering exceptional results on every project, no matter the size or complexity.",
-        "We believe in building long-term relationships with our clients based on trust, quality, and outstanding customer service."
+    heading = "Our Story",
+    subheading = "How We Started Building Digital Solutions for Contractors",
+    story = [
+        "Founded in 2014, we started with a simple observation: contractors are experts at their craft, but many struggle to showcase their work online. We saw talented professionals losing business to competitors with better websites.",
+        "What began as a small web design studio has grown into a specialized agency focused exclusively on the trades industry. We've learned what works, what converts, and what contractors actually need to succeed online.",
+        "Today, we're proud to serve hundreds of contractors across the country, helping them build their digital presence and grow their businesses. Every website we create is backed by years of industry knowledge and real-world results.",
     ],
-    image,
-    imageAlt = "Company Image",
-    reverse = false
+    image = "/images/about1.avif",
+    imageAlt = "Our team working on contractor website designs",
 } = Astro.props;
 ---
 
-<section class="py-16 px-6 max-w-6xl mx-auto">
-    <div class={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center ${reverse ? 'md:grid-flow-col-dense' : ''}`}>
-        <!-- Text Content -->
-        <div class={reverse ? 'md:col-start-2' : ''}>
-            <h2 class="heading-h2 font-heading font-bold mb-6 text-primary">
-                {title}
-            </h2>
-            {paragraphs.map((paragraph) => (
-                <p class="text-secondary mb-4 leading-relaxed last:mb-0">
-                    {paragraph}
-                </p>
-            ))}
-        </div>
-        
-        <!-- Image -->
-        <div class={reverse ? 'md:col-start-1' : ''}>
-            {image ? (
-                <img 
-                    src={image} 
-                    alt={imageAlt}
-                    class="w-full h-96 object-cover rounded-lg shadow-lg"
-                />
-            ) : (
-                <div class="bg-primary h-96 flex items-center justify-center text-white rounded-lg shadow-lg">
-                    <div class="text-center">
-                        <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
-                        </svg>
-                        <p class="text-center opacity-75">{imageAlt}</p>
+<section class="py-16 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Image Side -->
+            <div class="order-2 lg:order-1">
+                <div class="relative">
+                    <img
+                        src={image}
+                        alt={imageAlt}
+                        class="w-full h-[500px] object-cover shadow-lg"
+                    />
+                    <div
+                        class="absolute -bottom-6 -right-6 w-48 h-48 bg-accent opacity-20 -z-10 hidden lg:block"
+                    >
                     </div>
                 </div>
-            )}
+            </div>
+
+            <!-- Content Side -->
+            <div class="order-1 lg:order-2">
+                <div class="mb-6">
+                    <h2
+                        class="heading-h2 font-heading font-bold text-[#1e3a5f] mb-4"
+                    >
+                        {heading}
+                    </h2>
+                    <p class="text-xl font-body text-gray-600">
+                        {subheading}
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    {
+                        story.map((paragraph) => (
+                            <p class="font-body text-gray-600 text-lg leading-relaxed">
+                                {paragraph}
+                            </p>
+                        ))
+                    }
+                </div>
+
+                <!-- Timeline Highlights -->
+                <div class="mt-10 space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="w-12 h-12 bg-accent flex items-center justify-center shrink-0"
+                        >
+                            <svg
+                                class="w-6 h-6 text-white"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4
+                                class="font-heading font-bold text-[#1e3a5f] text-lg mb-1"
+                            >
+                                Industry Expertise
+                            </h4>
+                            <p class="font-body text-gray-600">
+                                Deep understanding of contractor needs and
+                                challenges
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="w-12 h-12 bg-accent flex items-center justify-center shrink-0"
+                        >
+                            <svg
+                                class="w-6 h-6 text-white"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4
+                                class="font-heading font-bold text-[#1e3a5f] text-lg mb-1"
+                            >
+                                Proven Results
+                            </h4>
+                            <p class="font-body text-gray-600">
+                                Track record of helping contractors grow their
+                                business
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="w-12 h-12 bg-accent flex items-center justify-center shrink-0"
+                        >
+                            <svg
+                                class="w-6 h-6 text-white"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4
+                                class="font-heading font-bold text-[#1e3a5f] text-lg mb-1"
+                            >
+                                Ongoing Support
+                            </h4>
+                            <p class="font-body text-gray-600">
+                                Dedicated team committed to your long-term
+                                success
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
